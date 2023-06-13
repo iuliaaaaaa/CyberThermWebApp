@@ -92,9 +92,7 @@ setTimeout(() => setTemperature(75), 1000);
 async function updateThreatValue() {
     try {
         const response = await fetch("/get_threat_value");
-        const data = await response.json();
-
-        const threatValue = data.threat_value;
+        const threatValue = await response.json();
 
         // Update thermometer height based on threat value
         const thermometer = document.getElementById("temperature");
